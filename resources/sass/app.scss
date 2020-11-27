@@ -1,8 +1,60 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+.login-wrap {
+    width: 100%;
+    margin: 70px auto auto;
+    max-width: 630px;
+    min-height: 470px;
+    position: relative;
+    background: url("/img/costaafuera.PNG") no-repeat center;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-html {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 60px 70px 50px 70px;
+    background: rgba(227, 227, 227, 0.7);
+}
+
+.login-html .group .input,
+.login-html .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.4);
+}
+.login-html .group .label {
+    color: #aa0202;
+    font-size: 12px;
+}
+.login-html .tab,
+.login-html .group .label,
+.login-html .group .button {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.login-html .group .label,
+.login-html .group .input,
+.login-html .group .button {
+    width: 100%;
+    display: block;
+}
+
+.login-html .group .button {
+    color: #222;
+    background-color: #aa0202;
+}
+.login-html h1 {
+    color: #aa0202;
+}
