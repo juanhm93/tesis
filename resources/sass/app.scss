@@ -7,6 +7,15 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// layout style HOME STYLE PDVSA
+@import "homestyle";
+
+// menu de navegacion
+@import "sm-blue";
+@import "sm-core-css";
+
+// Login style
+
 .login-wrap {
     width: 100%;
     margin: 70px auto auto;
@@ -58,3 +67,6 @@
 .login-html h1 {
     color: #aa0202;
 }
+// end Login style
+
+//end layout style HOME STYLE PDVSA

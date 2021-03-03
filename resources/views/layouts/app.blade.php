@@ -7,10 +7,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SISGP') }}</title>
+    <title>{{ config('app.name', 'Aplicaciones de PDVSA') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.js') }}" ></script>
+    <script src="{{ asset('js/jquery.smartmenus.js') }}" ></script>
+    <script type="text/javascript">    
+        $(function() {
+        $('#main-menu').smartmenus();
+       });
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,8 +28,12 @@
 </head>
 <body>
     <div id="app">
-        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        @if(auth()->check()) 
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
             <div class="container">
+                <div class="row justify-content-center">
+
+                </div>  
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'SISGP') }}
                 </a>
@@ -73,11 +84,51 @@
                     </ul>
                 </div>
             </div>
-        </nav> --}}
+            
+            
+                
+        </nav>
 
-        <main class="py-4">
+     
+        
+                
+
+        <main class="py-0">
+            <div class="Contenedor" id="Main-externo">
+                <div class="Contenedor" id="Main-header">
+                    <a href=""><span class="Contenedor-con-Imagen" id="Main-Logo"></span></a>
+                    <div class="Contenedor" id="Contenedor-Degradado">
+                        <div class="Contenedor-con-Imagen" id="Logo-Continuacion"><span class="Contenedor" id="Nombre-Aplicacion">Sistema de ejecucion presupuestaria</span></div>
+                        <div class="Contenedor-con-Imagen" id="Logo-Final"></div>
+                    </div>
+                </div>
+                <div class="Contenedor-con-sombra" id="Main-BackCuerpoRight">
+                    <div class="Contenedor-con-sombra" id="Main-BackCuerpoLeft">
+                        <div class="Contenedor" id="Main-Cuerpo">
+                            <div class="Contenedor-con-Bordes" id="Main-Identificador_usuario">
+                                <span class="Texto-Identificador" id="Main-Usuario"> Bienvenido, user </span>
+                                <span class="Texto-Identificador" id="Main-Fecha">
+                                        {{-- <?php 
+                                        $datos =date('Y-m-d'); 		
+                                    echo $fecha = $this->fecha->obtenerFechaEnLetra($datos); ?> --}}
+                                 </span>
+                            </div>
+                            <div class="Contenedor" id="Main-breadcrumbs"><div id="Main-Traza"><div id="Main-Traza-aux"></div></div>
+                            <div class="EsquinasBread" id="EsquinaBreadDerecha"></div>
+                        </div>
+            @include('layouts.nav')
+           
+            @endif
             @yield('content')
+                   
+            @if(auth()->check()) 
+            </div>
+            </div>
+            <div class="Contenedor-con-Bordes" id="Main-Contenedor-footer"></div>
+            </div>
         </main>
+        @endif
     </div>
+  
 </body>
 </html>
