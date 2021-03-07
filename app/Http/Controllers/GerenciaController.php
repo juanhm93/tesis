@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Gerencia;
 use Illuminate\Http\Request;
+use DB;
+use Carbon\Carbon;
 
 class GerenciaController extends Controller
 {
@@ -14,7 +16,9 @@ class GerenciaController extends Controller
      */
     public function index()
     {
-        //
+        $gerencias = Gerencia::all();
+
+        return view('gerenciahab.index',compact('gerencias'));
     }
 
     /**
