@@ -17,15 +17,15 @@ class CreateProyectosTable extends Migration
             $table->id();
             $table->string('renglon');
             $table->string('titulo');
-            $table->integer('categoria_id');
-            $table->integer('division_id');
-            $table->integer('dom_id');
-            $table->integer('emx_id');
-            $table->foreign('categoria_id')-> references('id')->on('categorias');
-            $table->foreign('division_id')-> references('id')->on('divisions');
-            $table->foreign('dom_id')-> references('id')->on('doms');
-            $table->foreign('emx_id')-> references('id')->on('emxes');
+            $table->integer('categoria_id')->unsigned();
+            $table->integer('division_id')->unsigned();
+            $table->integer('dom_id')->unsigned();
+            $table->integer('emx_id')->unsigned();
             $table->timestamps();
+            // $table->foreign('categoria_id')-> references('id')->on('categorias');
+            // $table->foreign('division_id')-> references('id')->on('divisions');
+            // $table->foreign('dom_id')-> references('id')->on('doms');
+            // $table->foreign('emx_id')-> references('id')->on('emxes');
         });
     }
 

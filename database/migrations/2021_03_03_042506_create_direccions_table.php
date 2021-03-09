@@ -14,14 +14,16 @@ class CreateDireccionsTable extends Migration
     public function up()
     {
         Schema::create('direccions', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
             $table->string('descripcion');
-            $table->integer('division_id');
-            $table->integer('io_id');
-            $table->foreign('division_id')-> references('id')->on('divisions');
-            $table->foreign('io_id')-> references('id')->on('inversionoperacions');
+            $table->integer('division_id')->unsigned();
+            $table->integer('io_id')->unsigned();
             $table->timestamps();
+            // $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');
+            // $table->foreign('io_id')->references('id')->on('inversionoperacions')->onDelete('cascade');
         });
+        
     }
 
     /**

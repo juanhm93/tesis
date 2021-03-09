@@ -16,9 +16,9 @@ class CreateEmxesTable extends Migration
         Schema::create('emxes', function (Blueprint $table) {
             $table->id();
             $table->string('empresamixta');
-            $table->integer('division_id');
-            $table->foreign('division_id')-> references('id')->on('divisions');
+            $table->integer('division_id')->unsigned();
             $table->timestamps();
+            // $table->foreign('division_id')->references('id')->on('divisions');
         });
     }
 

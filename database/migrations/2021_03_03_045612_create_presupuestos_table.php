@@ -16,15 +16,15 @@ class CreatePresupuestosTable extends Migration
         Schema::create('presupuestos', function (Blueprint $table) {
             $table->id();
             $table->string('monto');
-            $table->integer('ejecucion_id');
-            $table->integer('moneda_id');
-            $table->integer('prohab_id');
-            $table->integer('direccion_id');
-            $table->foreign('ejecucion_id')-> references('id')->on('ejecucions');
-            $table->foreign('moneda_id')-> references('id')->on('monedas');
-            $table->foreign('prohab_id')-> references('id')->on('prohabs');
-            $table->foreign('direcion_id')-> references('id')->on('direcions');
+            $table->integer('ejecucion_id')->unsigned();
+            $table->integer('moneda_id')->unsigned();
+            $table->integer('prohab_id')->unsigned();
+            $table->integer('direccion_id')->unsigned();
             $table->timestamps();
+            // $table->foreign('ejecucion_id')-> references('id')->on('ejecucions');
+            // $table->foreign('moneda_id')-> references('id')->on('monedas');
+            // $table->foreign('prohab_id')-> references('id')->on('prohabs');
+            // $table->foreign('direcion_id')-> references('id')->on('direcions');
         });
     }
 
