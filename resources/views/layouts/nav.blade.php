@@ -13,7 +13,7 @@
           <li><a href="cexplicaciones">Explicaciones</a></li>
           </ul>	
           </li>
-        <li><a href="ctablahab">Habilitadora</a>
+        <li><a href="{{route('gerenciashabilitadoras.index')}}">Habilitadora</a>
         <ul>
           <li><a href="complemento/chabil">Nueva habilitadora</a></li>
           <li><a href="habilitadora/cpahab">Importar Anual</a></li>
